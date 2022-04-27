@@ -14,7 +14,7 @@ from telethon.tl.types import InputPeerEmpty
 import asyncio
 import io
 from telethon.utils import get_display_name
-from bot import send,intervel
+from __init__ import send,intervel
 
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
