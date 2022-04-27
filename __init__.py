@@ -38,8 +38,12 @@ def plugin(message):
             sending=bot.send_message(chat_id, 'please send the Promotion:-')
             bot.register_next_step_handler(sending,send)
         elif startplugin == 'update':
-            os.system('git init && git pull -f --all && pip3 install -r requirements.txt')
-            os.execl(sys.executable, "python3", "-m", "bot")
+            try:
+                os.system('git init && git pull -f --all && pip3 install -r requirements.txt')
+                os.execl(sys.executable, "python3", "-m", "__init__")
+                bot.send_message(chat_id, 'UPDATING...........')
+            except Exception as e:
+                bot.send_message(chat_id, f'**error** \n\n{e}')
     except Exception as e:
         bot.reply_to(message, f'oooops \n\n {e}')
 def joinnow(message):
