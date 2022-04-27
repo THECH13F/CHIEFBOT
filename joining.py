@@ -9,7 +9,7 @@ from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.sessions import StringSession
-from bot import *
+from __init__ import *
 f = open ('app.json', "r")
  
 # Reading from file
