@@ -1,0 +1,11 @@
+certifi
+charset-normalizer
+docopt
+idna
+pipreqs
+requests
+urllib3
+yarg
+telethon
+python-dotenv
+pytelegrambotapi

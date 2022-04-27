@@ -1,0 +1,31 @@
+{
+    "name": "CHIEFBOT",
+      "description": "BY CHIEF made in python using Telethon.",
+      "keywords": [
+          "Telethon",
+          "telegram",
+          "userbot",
+          "python",
+          "Joingroup"
+      ],
+      "repository": "https://github.com/hardikhacker/CHIEFBOT",
+      "stack": "container",
+    "env": {
+      "API_ID": {
+        "description": "Get this value from my.telegram.org! Please do not steal",
+        "value": ""
+      },
+      "API_HASH": {
+        "description": "Get this value from my.telegram.org! Please do not steal",
+        "value": ""
+      },
+      "SESSION": {
+        "description": "take string session from https://replit.com/talk/share/Ultroid-String-Session/123343",
+        "value": ""
+      },
+      "API_TOKEN": {
+        "description": "Enter the bot token",
+        "value": ""
+      }
+    }
+  }
