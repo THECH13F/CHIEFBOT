@@ -75,3 +75,4 @@ async def sending():
                         f"{error_count} Errors",)
                 ttime=float(stime)*3600
                 await asyncio.sleep(ttime)
+asyncio.run(sending())
