@@ -39,7 +39,7 @@ def plugin(message):
             bot.register_next_step_handler(sending,send)
         elif startplugin == 'update':
             try:
-                os.system('git init && git pull -f --all && pip3 install -r requirements.txt')
+                os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
                 os.execl(sys.executable, "python3", "-m", "__init__")
                 bot.send_message(chat_id, 'UPDATING...........')
             except Exception as e:
