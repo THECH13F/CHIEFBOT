@@ -22,7 +22,7 @@ Hi This bot is made by
 CHEIF AND TEAM 
 """)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    markup.add('Group Joining', 'Sending message', 'Update')
+    markup.add('Group Joining', 'Sending message', 'update')
     msg = bot.send_message(message.chat.id, 'choose one from them', reply_markup=markup)
     bot.register_next_step_handler(msg, plugin)
 
@@ -40,8 +40,8 @@ def plugin(message):
         elif startplugin == 'update':
             try:
                 os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
-                os.execl(sys.executable, "python3", "-m", "__init__")
                 bot.send_message(chat_id, 'UPDATING...........')
+                os.execl(sys.executable, "python3", "-m", "__init__")
             except Exception as e:
                 bot.send_message(chat_id, f'**error** \n\n{e}')
     except Exception as e:
