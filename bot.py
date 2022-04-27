@@ -38,7 +38,7 @@ def plugin(message):
             sending=bot.send_message(chat_id, 'please send the Promotion:-')
             bot.register_next_step_handler(sending,send)
         elif startplugin == 'update':
-            os.system('git pull -f && pip3 install -r requirements.txt')
+            os.system('git init && git pull -f && pip3 install -r requirements.txt')
             os.execl(sys.executable, "python3", "-m", "bot")
     except Exception as e:
         bot.reply_to(message, f'oooops \n\n {e}')
