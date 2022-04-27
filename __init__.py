@@ -71,6 +71,3 @@ def intervel(message):
 bot.enable_save_next_step_handlers(delay=2)
 
 bot.infinity_polling()
-
-if __name__=="__main__":
-    send_welcome()
