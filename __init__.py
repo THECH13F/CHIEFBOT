@@ -22,7 +22,7 @@ Hi This bot is made by
 CHEIF AND TEAM 
 """)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    markup.add('Group Joining', 'Sending message', 'Update')
+    markup.add('Group Joining', 'Sending message', 'update')
     msg = bot.send_message(message.chat.id, 'choose one from them', reply_markup=markup)
     bot.register_next_step_handler(msg, plugin)
 
