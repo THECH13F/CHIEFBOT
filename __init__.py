@@ -41,7 +41,7 @@ def plugin(message):
         elif startplugin == 'update':
             try:
                 #os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
-                subprocess.Popen(["git", "init", "&&", "git", "fetch", "origin", "main", "-f", "--all", "&&", "pip3", "install", "-r", "requirements.txt"], stdout=subprocess.PIPE)
+                subprocess.Popen(["git", "init", "&&", "git", "fetch", "origin", "main", "--all", "&&", "pip3", "install", "-r", "requirements.txt"], stdout=subprocess.PIPE)
                 bot.send_message(chat_id, 'UPDATING...........')
                 os.execl(sys.executable, "python3", "-m", "__init__")
             except Exception as e:
@@ -52,7 +52,8 @@ def joinnow(message):
     chat_id = message.chat.id
     Starting_group = message.text
     try:
-        os.system('python3 joining.py')
+        subprocess.Popen(["python3", "joining.py"])
+        #os.system('python3 joining.py')
         bot.send_message(chat_id,"joining.... \n\n Check your saved messages")
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
