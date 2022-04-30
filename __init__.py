@@ -39,9 +39,13 @@ def plugin(message):
             try:
                 #os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
                 subprocess.run("git init", shell=True)
+                print("git init done")
                 subprocess.run("git config --global init.defaultBranch main", shell=True)
+                print("git config done")
                 subprocess.run("git branch -m main", shell=True)
+                print("git branch -m main done....")
                 subprocess.run("git fetch origin main -f", shell=True)
+                print("git fetch origin main -f done....")
                 subprocess.run("python -m pip install -r requirements.txt", shell=True)
                 bot.send_message(chat_id, 'UPDATING...........')
                 os.execl(sys.executable, "python3", "-m", "__init__")
