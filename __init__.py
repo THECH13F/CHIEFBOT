@@ -44,7 +44,7 @@ def plugin(message):
                 print("git init done")
                 subprocess.run("git branch -m main", shell=True)
                 print("git branch -m main done....")
-                subprocess.run("git pull", shell=True)
+                subprocess.run("git pull main", shell=True)
                 print("git pull done....")
                 subprocess.run("python -m pip install -r requirements.txt", shell=True)
                 bot.send_message(chat_id, 'UPDATING...........')
