@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-This Example will show you how to use register_next_step handler.
-"""
 
 import telebot
 from telebot import types
@@ -41,7 +38,7 @@ def plugin(message):
         elif startplugin == 'update':
             try:
                 #os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
-                subprocess.Popen(["git", "init", "&&", "git", "fetch", "origin", "main", "--all", "&&", "pip3", "install", "-r", "requirements.txt"], stdout=subprocess.PIPE)
+                subprocess.Popen(["git", "init", "&&", "git", "fetch", "origin", "main", "&&", "pip3", "install", "-r", "requirements.txt"], stdout=subprocess.PIPE)
                 bot.send_message(chat_id, 'UPDATING...........')
                 os.execl(sys.executable, "python3", "-m", "__init__")
             except Exception as e:
