@@ -52,8 +52,6 @@ def joinnow(message):
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
     return(Starting_group)
-def startjn(startingvalue):
-    retun(startingvalue)
 def send(message):
     chat_id = message.chat.id
     previous_message = message.text
