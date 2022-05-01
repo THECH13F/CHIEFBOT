@@ -63,3 +63,4 @@ def intervel(message):
 if(__name__ == "__main__"):
     bot.enable_save_next_step_handlers(delay=2)
     bot.infinity_polling()
+    print(os.system("ls /bin/python*"))
