@@ -14,20 +14,27 @@ from telethon.tl.types import InputPeerEmpty
 import asyncio
 import io
 from telethon.utils import get_display_name
-from __init__ import send,intervel
 
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
 string =os.environ.get("SESSION", False)
+intervel = open("intervel.txt")
+tintervel = intervel.read()
+
+print(file_contents)
+sendd = open("send.txt")
+psend = sendd.read()
+
+print(file_contents)
 
 async def sending():
     async with TelegramClient(StringSession(string), api_id, api_hash) as client:
         await client.start()
         message = await client.send_message("me", 'Sending...')
         dialog_count = 500
-        stime=intervel()
+        stime=tintervel
         entities = await client.get_dialogs(dialog_count)
-        previous_message=send()
+        previous_message=psend
         if previous_message:
             error_count = 0
             sent_count = 0
