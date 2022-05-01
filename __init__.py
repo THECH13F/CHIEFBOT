@@ -26,7 +26,7 @@ def plugin(message):
         chat_id = message.chat.id
         startplugin = message.text
         if startplugin == 'Group Joining':
-            groupjoin=bot.send_message(chat_id, 'From where to satrt?')
+            groupjoin=bot.send_message(chat_id, 'From where to satart?')
             bot.register_next_step_handler(groupjoin, joinnow)
         elif startplugin == 'Sending message':
             sending=bot.send_message(chat_id, 'please send the Promotion:-')
