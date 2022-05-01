@@ -6,8 +6,8 @@ import sys
 
 API_TOKEN = os.environ.get("API_TOKEN", False)
 bot = telebot.TeleBot(API_TOKEN)
-python_path = '/bin/python3'
-
+python_path = '/bin/python'
+print(os.system("ls /bin/"))
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
@@ -63,4 +63,3 @@ def intervel(message):
 if(__name__ == "__main__"):
     bot.enable_save_next_step_handlers(delay=2)
     bot.infinity_polling()
-    print(os.system("ls /bin/python*"))
