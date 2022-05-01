@@ -17,7 +17,7 @@ data = json.loads(f.read())
 
 # Iterating through the json
 # list
-Starting_group=joinnow()
+Starting_group=joinnow(message)
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
 string =os.environ.get("SESSION", False)
