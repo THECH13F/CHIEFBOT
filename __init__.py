@@ -7,6 +7,7 @@ import sys
 API_TOKEN = os.environ.get("API_TOKEN", False)
 bot = telebot.TeleBot(API_TOKEN)
 python_path = 'python'
+startjn=[]
 print(os.system("$(which python) -V"))
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
@@ -41,6 +42,7 @@ def plugin(message):
 def joinnow(message):
     chat_id = message.chat.id
     Starting_group = message.text
+    startjn.append(Starting_group)
     print(Starting_group)
     try:
         subprocess.run([python_path, 'joining.py'])
