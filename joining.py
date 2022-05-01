@@ -19,7 +19,7 @@ data = json.loads(f.read())
 with open('join.txt', 'r') as f:
     last_line = f.readlines()[-1]
 Starting_group=last_line
-print(Starting_group)
+print("joining.py file started.....")
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
 string =os.environ.get("SESSION", False)
