@@ -7,7 +7,7 @@ import sys
 API_TOKEN = os.environ.get("API_TOKEN", False)
 bot = telebot.TeleBot(API_TOKEN)
 python_path = 'python'
-print(os.system("$(which python) -V"))
+print("CHIEF BOT STARTED......")
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
@@ -44,7 +44,7 @@ def joinnow(message):
     with open ("join.txt",'w') as f:
         f.write(Starting_group)
         f.close()
-    print(Starting_group)
+    print(F'JOINING STARTING FROM {Starting_group}')
     try:
         subprocess.run([python_path, 'joining.py'])
         bot.send_message(chat_id,"joining.... \n\n Check your saved messages")
