@@ -54,12 +54,18 @@ def joinnow(message):
 def send(message):
     chat_id = message.chat.id
     previous_message = message.text
+    with open ("send.txt",'w') as f:
+        f.write(previous_message)
+        f.close()
     time=bot.send_message(chat_id, 'please write time intervel:-')
     bot.register_next_step_handler(time,intervel)
     return(previous_message)
 def intervel(message):
     chat_id=message.chat.id
     stime=message.text
+    with open ("intervel.txt",'w') as f:
+        f.write(stime)
+        f.close()
     try:
         subprocess.run([python_path, 'sending.py'])
         bot.send_message(chat_id,"Sending.... \n\n Check your saved messages")
