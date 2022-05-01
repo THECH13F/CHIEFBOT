@@ -46,11 +46,13 @@ def joinnow(message):
         bot.send_message(chat_id,"joining.... \n\n Check your saved messages")
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
+    return(Starting_group)
 def send(message):
     chat_id = message.chat.id
     previous_message = message.text
     time=bot.send_message(chat_id, 'please write time intervel:-')
     bot.register_next_step_handler(time,intervel)
+    return(previous_message)
 def intervel(message):
     chat_id=message.chat.id
     stime=message.text
@@ -59,6 +61,7 @@ def intervel(message):
         bot.send_message(chat_id,"Sending.... \n\n Check your saved messages")
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
+    return(stime)
 # print()
 if(__name__ == "__main__"):
     bot.enable_save_next_step_handlers(delay=2)
