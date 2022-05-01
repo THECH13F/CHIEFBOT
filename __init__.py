@@ -1,16 +1,12 @@
-# -*- coding: utf-8 -*-
 
 import telebot
 from telebot import types
-import os
+import os, subprocess
 import sys
-import subprocess
 
 API_TOKEN = os.environ.get("API_TOKEN", False)
-
 bot = telebot.TeleBot(API_TOKEN)
-
-
+python_path = '/bin/python3'
 
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
@@ -20,7 +16,7 @@ Hi This bot is made by
 CHEIF AND TEAM 
 """)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    markup.add('Group Joining', 'Sending message', 'Update')
+    markup.add('Group Joining', 'Sending message', 'update')
     msg = bot.send_message(message.chat.id, 'choose one from them', reply_markup=markup)
     bot.register_next_step_handler(msg, plugin)
 
@@ -36,29 +32,17 @@ def plugin(message):
             sending=bot.send_message(chat_id, 'please send the Promotion:-')
             bot.register_next_step_handler(sending,send)
         elif startplugin == 'update':
-            try:
-                #os.system('git init && git fetch origin main -f --all && pip3 install -r requirements.txt')
-                subprocess.run("git config --global init.defaultBranch main", shell=True)
-                print("git config done...")
-                subprocess.run("git init", shell=True)
-                print("git init done")
-                subprocess.run("git branch -m main", shell=True)
-                print("git branch -m main done....")
-                subprocess.run("git pull main", shell=True)
-                print("git pull done....")
-                subprocess.run("python -m pip install -r requirements.txt", shell=True)
-                bot.send_message(chat_id, 'UPDATING...........')
-                os.execl(sys.executable, "python3", "-m", "__init__")
-            except Exception as e:
-                bot.send_message(chat_id, f'**error** \n\n{e}')
+            # os.system('git add -A')
+            
+            os.system('git push')
+            os.execl(sys.executable, "python3", "-m", "bot")
     except Exception as e:
         bot.reply_to(message, f'oooops \n\n {e}')
 def joinnow(message):
     chat_id = message.chat.id
     Starting_group = message.text
     try:
-        subprocess.Popen(["python3", "joining.py"])
-        #os.system('python3 joining.py')
+        subprocess.run([python_path, 'joining.py'])
         bot.send_message(chat_id,"joining.... \n\n Check your saved messages")
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
@@ -71,11 +55,11 @@ def intervel(message):
     chat_id=message.chat.id
     stime=message.text
     try:
-        os.system('python3 sending.py')
+        subprocess.run([python_path, 'sending.py'])
         bot.send_message(chat_id,"Sending.... \n\n Check your saved messages")
     except Exception as e:
         bot.reply_to(message, f'\t!!!ERROR!!! \n\n {e}')
-
-bot.enable_save_next_step_handlers(delay=2)
-
-bot.infinity_polling()
+# print()
+if(__name__ == "__main__"):
+    bot.enable_save_next_step_handlers(delay=2)
+    bot.infinity_polling()
