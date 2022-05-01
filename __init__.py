@@ -41,6 +41,7 @@ def plugin(message):
 def joinnow(message):
     chat_id = message.chat.id
     Starting_group = message.text
+    print(Starting_group)
     try:
         subprocess.run([python_path, 'joining.py'])
         bot.send_message(chat_id,"joining.... \n\n Check your saved messages")
