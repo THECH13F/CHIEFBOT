@@ -17,7 +17,7 @@ data = json.loads(f.read())
 
 # Iterating through the json
 # list
-Starting_group=__init__.startjn[0]
+Starting_group=__init__.startjn
 print(Starting_group)
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
