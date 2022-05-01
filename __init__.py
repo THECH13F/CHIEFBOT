@@ -7,7 +7,6 @@ import sys
 API_TOKEN = os.environ.get("API_TOKEN", False)
 bot = telebot.TeleBot(API_TOKEN)
 python_path = 'python'
-startjn
 print(os.system("$(which python) -V"))
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
