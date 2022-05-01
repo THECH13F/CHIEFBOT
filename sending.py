@@ -21,11 +21,11 @@ string =os.environ.get("SESSION", False)
 intervel = open("intervel.txt")
 tintervel = intervel.read()
 
-print(file_contents)
+print(tintervel)
 sendd = open("send.txt")
 psend = sendd.read()
 
-print(file_contents)
+print(psend)
 
 async def sending():
     async with TelegramClient(StringSession(string), api_id, api_hash) as client:
