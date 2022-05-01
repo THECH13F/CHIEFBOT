@@ -9,7 +9,6 @@ from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.sessions import StringSession
-import __init__
 f = open ('app.json', "r")
  
 # Reading from file
@@ -17,7 +16,9 @@ data = json.loads(f.read())
 
 # Iterating through the json
 # list
-Starting_group=__init__.startjn
+with open('join.txt', 'r') as f:
+    last_line = f.readlines()[-1]
+Starting_group=last_line
 print(Starting_group)
 api_hash=os.environ.get("API_HASH", False)
 api_id=os.environ.get("API_ID", False)
