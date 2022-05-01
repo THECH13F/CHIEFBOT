@@ -13,7 +13,7 @@ print(os.system("$(which python) -V"))
 def send_welcome(message):
     msg = bot.send_message(message.chat.id, """\
 Hi This bot is made by
-CHEIF AND TEAM 
+**CHIEF AND TEAM** 
 """)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.add('Group Joining', 'Sending message', 'update')
