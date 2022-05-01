@@ -42,7 +42,9 @@ def plugin(message):
 def joinnow(message):
     chat_id = message.chat.id
     Starting_group = message.text
-    startjon=startjn(Starting_group)
+    with open ("join.txt",'w') as f:
+        f.write(Starting_group)
+        f.close()
     print(Starting_group)
     try:
         subprocess.run([python_path, 'joining.py'])
